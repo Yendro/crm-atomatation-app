@@ -1,8 +1,8 @@
 import pandas as pd
 import re
 
-df1= pd.read_excel('./data/masiv/Reporte_de_Flujo_Por_Desarrollo.xlsx')
-df2= pd.read_excel('./data/masiv/Reporte_de_Flujo_Por_Desarrollo2.xlsx')
+df1= pd.read_excel('server/data/masiv/Reporte_de_Flujo_Por_Desarrollo.xlsx')
+df2= pd.read_excel('server/data/masiv/Reporte_de_Flujo_Por_Desarrollo2.xlsx')
 
 df3 = pd.concat([df1, df2]).drop_duplicates().reset_index(drop=True)
 
@@ -110,4 +110,4 @@ columnas_finales = [
 df3 = df3.reindex(columns=columnas_finales)#Reordenar columnas
 
 
-df3.to_excel('Python\\Marcas Blancas - MASIV\\reporte_normalizado.xlsx', index=False)
+df3.to_excel('server/data/masiv/reporte-normalizado-masiv.xlsx', index=False)
